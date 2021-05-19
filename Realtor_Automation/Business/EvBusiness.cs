@@ -12,6 +12,7 @@ namespace Realtor_Automation.Business
 {
     public class EvBusiness
     {
+        //mapper ekleme
         MapperConfiguration config;
         Mapper mapper;
         EvData evData;
