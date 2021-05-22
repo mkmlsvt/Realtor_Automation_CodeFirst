@@ -63,12 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\AdminBusiness.cs" />
     <Compile Include="Business\EvBusiness.cs" />
     <Compile Include="Business\EvTurBusiness.cs" />
     <Compile Include="Business\KiralananBusiness.cs" />
     <Compile Include="Business\MusteriBusiness.cs" />
     <Compile Include="Business\MusteriTurBusiness.cs" />
     <Compile Include="Business\SatilanBusiness.cs" />
+    <Compile Include="Data\AdminData.cs" />
     <Compile Include="Data\EvData.cs" />
     <Compile Include="Data\EvTurData.cs" />
     <Compile Include="Data\KiralananData.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="DTO\EvFilterDTO.cs" />
     <Compile Include="DTO\EvDTO.cs" />
     <Compile Include="DTO\KiralananDTO.cs" />
+    <Compile Include="DTO\MusteriSpDTO.cs" />
     <Compile Include="DTO\MusteriDTO.cs" />
     <Compile Include="DTO\SatilanDTO.cs" />
     <Compile Include="Forms\frmEvDuzenle.cs">
@@ -98,11 +101,29 @@
     <Compile Include="Forms\frmEvListele.Designer.cs">
       <DependentUpon>frmEvListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGiris.Designer.cs">
+      <DependentUpon>frmGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmIslem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmIslem.Designer.cs">
       <DependentUpon>frmIslem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIstatistik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIstatistik.Designer.cs">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMusteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMusteri.Designer.cs">
+      <DependentUpon>frmMusteri.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmRapor.cs">
       <SubType>Form</SubType>
@@ -116,6 +137,8 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loglar\EvLog\EvLog.cs" />
+    <Compile Include="Loglar\MusteriLog\MusteriLog.cs" />
     <Compile Include="Migrations\202105141150544_createTable.cs" />
     <Compile Include="Migrations\202105141150544_createTable.designer.cs">
       <DependentUpon>202105141150544_createTable.cs</DependentUpon>
@@ -149,8 +172,17 @@
     <EmbeddedResource Include="Forms\frmEvListele.resx">
       <DependentUpon>frmEvListele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGiris.resx">
+      <DependentUpon>frmGiris.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmIslem.resx">
       <DependentUpon>frmIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIstatistik.resx">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMusteri.resx">
+      <DependentUpon>frmMusteri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRapor.resx">
       <DependentUpon>frmRapor.cs</DependentUpon>

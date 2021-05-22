@@ -17,7 +17,7 @@ namespace Realtor_Automation
         {          
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRapor());
+            Application.Run(new frmGiris());
         }
     }
 }

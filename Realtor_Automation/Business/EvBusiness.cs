@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
 using Realtor_Automation.Data;
 using Realtor_Automation.DTO;
+using Realtor_Automation.Loglar.EvLog;
 using Realtor_Automation.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Realtor_Automation.Business
 {
@@ -27,9 +30,32 @@ namespace Realtor_Automation.Business
             var data = evData.Get_By_Id(id);      
             return data;
         }
+
+        public int ToplamEvSayi()
+        {
+            int toplamEvSayi = 0;
+            List<Ev> evler = evData.GetAllHouse();
+            foreach(var tev in evler)
+            {
+                toplamEvSayi++;
+            }
+            return toplamEvSayi;
+        }
+
         public void AddHouse(Ev ev)
         {
-            evData.AddHouse(ev);
+            try
+            {
+                evData.AddHouse(ev);
+            }
+            catch (Exception exception)
+            {
+                var evlog = new EvLog();
+                using (StreamWriter writer = new StreamWriter(evlog.fullpath, true))
+                {
+                    writer.WriteLine(exception.Message + "\tEv Kaydetme Başarısız\t" + System.DateTime.Now.ToString());
+                }
+            }
         }
         public List<EvDTO> GetAllHouseDTO()
         {

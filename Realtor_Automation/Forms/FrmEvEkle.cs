@@ -1,10 +1,12 @@
 ﻿using Realtor_Automation.Business;
+using Realtor_Automation.Loglar.EvLog;
 using Realtor_Automation.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace Realtor_Automation.Forms
 {
     public partial class FrmEvEkle : Form
     {
+        
         private static FrmEvEkle form = null;
         string resimYolu;
         EvBusiness evBusiness;
@@ -25,7 +28,7 @@ namespace Realtor_Automation.Forms
         public FrmEvEkle()
         {
             InitializeComponent();
-            form = this;
+            form = this;          
         }
 
         private void btnResimSec_Click(object sender, EventArgs e)
@@ -69,32 +72,57 @@ namespace Realtor_Automation.Forms
             }
             else
             {
-               
-                AddCustomer();
-                Update_Datagridview_();
-                Clear_Form();
-                MessageBox.Show("Başarıyla Kaydedildi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    AddCustomer();
+                    Update_Datagridview_();
+                    Clear_Form();                  
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Girdiğinz değelerde hata ile karşılaşışdı Tekrar deneyin...", "hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var evlog = new EvLog();
+                    using (StreamWriter writer = new StreamWriter(evlog.fullpath, true))
+                    {
+                        writer.WriteLine(exception.Message + "\tEv Kaydetme Başarısız\t" + System.DateTime.Now.ToString());
+                    }
+                }
+                
             }
             
         }
 
         private void AddHouse()
-        {           
-            evBusiness = new EvBusiness();
-            ev = new Ev();
-            ev.Fiyat = int.Parse(txtEvFiyat.Text);
-            ev.Esyali = chboxEsyali.Checked;
-            ev.Adres = richtxtAdres.Text;
-            ev.Tarih = Convert.ToDateTime(DateTime.Now.ToString());
-            ev.EvTurId = int.Parse(cmboxEvTur.SelectedValue.ToString());
-            ev.Kat = int.Parse(masktxtEvKat.Text);
-            ev.Resim = resimYolu;
-            ev.Metrekare = int.Parse(masktxtMetreKare.Text);
-            ev.OdaSayi = int.Parse(masktxtOdaSayi.Text);
-            ev.Musait = true;           
-            ev.KiralikSatilik = cmboxIslemTuru.SelectedItem.ToString();        
-            ev.MusteriId = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
-            evBusiness.AddHouse(ev);
+        {
+            try
+            {
+                evBusiness = new EvBusiness();
+                ev = new Ev();
+                ev.Fiyat = int.Parse(txtEvFiyat.Text);
+                ev.Esyali = chboxEsyali.Checked;
+                ev.Adres = richtxtAdres.Text;
+                ev.Tarih = Convert.ToDateTime(DateTime.Now.ToString());
+                ev.EvTurId = int.Parse(cmboxEvTur.SelectedValue.ToString());
+                ev.Kat = int.Parse(masktxtEvKat.Text);
+                ev.Resim = resimYolu;
+                ev.Metrekare = int.Parse(masktxtMetreKare.Text);
+                ev.OdaSayi = int.Parse(masktxtOdaSayi.Text);
+                ev.Musait = true;
+                ev.KiralikSatilik = cmboxIslemTuru.SelectedItem.ToString();
+                ev.MusteriId = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+                evBusiness.AddHouse(ev);
+                MessageBox.Show("Başarıyla Kaydedildi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Girdiğinz değelerde hata ile karşılaşışdı Tekrar deneyin...", "hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var evlog = new EvLog();
+                using (StreamWriter writer = new StreamWriter(evlog.fullpath, true))
+                {
+                    writer.WriteLine(exception.Message + "\tEv Kaydetme Başarısız\t" + System.DateTime.Now.ToString());
+                }
+            }
+            
         }
 
         private void AddCustomer()

@@ -33,11 +33,38 @@ namespace Realtor_Automation.Business
             return musteriler;
         }
 
-        internal object GetAllCustomersDTO()
+        public int ToplamMusteriSayi()
+        {
+            int sumCustomers = 0;
+            var musteriler = musteriData.GetAllCustomers();
+            foreach (var musteri in musteriler)
+            {
+                sumCustomers++;
+            }
+            return sumCustomers;
+        }
+
+        public List<MusteriDTO> GetAllCustomersDTO()
         {
             var musteriler = musteriData.GetAllCustomers();
             var musterlierDTO = mapper.Map<List<Musteri>, List<MusteriDTO>>(musteriler);
             return musterlierDTO;
+        }
+        public List<MusteriSpDTO> GetAllCustomersFromSp()
+        {
+           var a =  musteriData.GetAllCustomersFromSp();
+           return a;
+
+        }
+
+        public void DeleteCustomer(string ad, string soyad)
+        {
+            musteriData.DeleteCustomer(ad,soyad);
+        }
+
+        public void UpdateCustomer(Musteri musteri , Musteri degiscekMusteri)
+        {
+            musteriData.UpdateCustomer(musteri,degiscekMusteri);
         }
     }
 }

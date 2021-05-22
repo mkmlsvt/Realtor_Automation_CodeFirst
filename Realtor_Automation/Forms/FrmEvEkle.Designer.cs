@@ -49,6 +49,7 @@ namespace Realtor_Automation.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.cmboxMTur = new System.Windows.Forms.ComboBox();
             this.masktxtTel = new System.Windows.Forms.MaskedTextBox();
             this.txtMSoyad = new System.Windows.Forms.TextBox();
@@ -57,21 +58,20 @@ namespace Realtor_Automation.Forms
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnKaydet = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.realtorAutomationDataSet = new Realtor_Automation.RealtorAutomationDataSet();
-            this.musteriBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.musteriTableAdapter = new Realtor_Automation.RealtorAutomationDataSetTableAdapters.MusteriTableAdapter();
             this.ıdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.musteriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.realtorAutomationDataSet = new Realtor_Automation.RealtorAutomationDataSet();
+            this.musteriTableAdapter = new Realtor_Automation.RealtorAutomationDataSetTableAdapters.MusteriTableAdapter();
             this.btnEvEkle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realtorAutomationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realtorAutomationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -249,6 +249,16 @@ namespace Realtor_Automation.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Kayıt";
             // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Location = new System.Drawing.Point(84, 295);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(163, 41);
+            this.btnKaydet.TabIndex = 22;
+            this.btnKaydet.Text = "KAYDET";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
             // cmboxMTur
             // 
             this.cmboxMTur.FormattingEnabled = true;
@@ -315,16 +325,6 @@ namespace Realtor_Automation.Forms
             this.label9.TabIndex = 0;
             this.label9.Text = "Ad";
             // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Location = new System.Drawing.Point(84, 295);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(163, 41);
-            this.btnKaydet.TabIndex = 22;
-            this.btnKaydet.Text = "KAYDET";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -341,20 +341,6 @@ namespace Realtor_Automation.Forms
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(428, 469);
             this.dataGridView1.TabIndex = 22;
-            // 
-            // realtorAutomationDataSet
-            // 
-            this.realtorAutomationDataSet.DataSetName = "RealtorAutomationDataSet";
-            this.realtorAutomationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // musteriBindingSource
-            // 
-            this.musteriBindingSource.DataMember = "Musteri";
-            this.musteriBindingSource.DataSource = this.realtorAutomationDataSet;
-            // 
-            // musteriTableAdapter
-            // 
-            this.musteriTableAdapter.ClearBeforeFill = true;
             // 
             // ıdDataGridViewTextBoxColumn
             // 
@@ -388,6 +374,20 @@ namespace Realtor_Automation.Forms
             this.telNoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telNoDataGridViewTextBoxColumn.Name = "telNoDataGridViewTextBoxColumn";
             this.telNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // musteriBindingSource
+            // 
+            this.musteriBindingSource.DataMember = "Musteri";
+            this.musteriBindingSource.DataSource = this.realtorAutomationDataSet;
+            // 
+            // realtorAutomationDataSet
+            // 
+            this.realtorAutomationDataSet.DataSetName = "RealtorAutomationDataSet";
+            this.realtorAutomationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // musteriTableAdapter
+            // 
+            this.musteriTableAdapter.ClearBeforeFill = true;
             // 
             // btnEvEkle
             // 
@@ -431,8 +431,8 @@ namespace Realtor_Automation.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.realtorAutomationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.realtorAutomationDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

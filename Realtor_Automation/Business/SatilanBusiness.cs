@@ -32,5 +32,29 @@ namespace Realtor_Automation.Business
             var satilanlarDTO = mapper.Map<List<Satilan>,List<SatilanDTO>>(satilanlar);
             return satilanlarDTO;
         }
+
+        public int ToplamSatilanSayi()
+        {
+            int toplam = 0;
+            var satilanlar = satilanData.GetAllSatilan();
+            foreach (var satin in satilanlar)
+            {
+                toplam++;
+            }
+            return toplam;
+        }
+
+        public double SatilanOrtalama()
+        {
+            double ortSatDto = 0;
+            var satilanlar = satilanData.GetAllSatilan();
+            var satilanlarDTO = mapper.Map<List<Satilan>, List<SatilanDTO>>(satilanlar);
+            foreach(var satilanDto in satilanlarDTO)
+            {
+                ortSatDto += satilanDto.EvFiyat;
+            }
+            ortSatDto = ortSatDto / ToplamSatilanSayi();
+            return ortSatDto;
+        }
     }
 }

@@ -1,0 +1,2 @@
+Giriş dizesi doğru biçimde değildi.	Ev Kaydetme Başarısız	22.05.2021 21:35:16
+Giriş dizesi doğru biçimde değildi.	Ev Duzenleme Başarısız	22.05.2021 21:40:19

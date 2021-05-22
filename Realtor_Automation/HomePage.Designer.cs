@@ -66,6 +66,7 @@ namespace Realtor_Automation
             this.btnMusteriListele.TabIndex = 3;
             this.btnMusteriListele.Text = "MÜŞTERİLER";
             this.btnMusteriListele.UseVisualStyleBackColor = true;
+            this.btnMusteriListele.Click += new System.EventHandler(this.btnMusteriListele_Click);
             // 
             // btnRaporlar
             // 
@@ -75,6 +76,7 @@ namespace Realtor_Automation
             this.btnRaporlar.TabIndex = 4;
             this.btnRaporlar.Text = "RAPORLAR";
             this.btnRaporlar.UseVisualStyleBackColor = true;
+            this.btnRaporlar.Click += new System.EventHandler(this.btnRaporlar_Click);
             // 
             // btnIstatistik
             // 
@@ -84,6 +86,7 @@ namespace Realtor_Automation
             this.btnIstatistik.TabIndex = 5;
             this.btnIstatistik.Text = "İSTATİSTİK";
             this.btnIstatistik.UseVisualStyleBackColor = true;
+            this.btnIstatistik.Click += new System.EventHandler(this.btnIstatistik_Click);
             // 
             // btnCikis
             // 
@@ -93,6 +96,7 @@ namespace Realtor_Automation
             this.btnCikis.TabIndex = 6;
             this.btnCikis.Text = "ÇIKIŞ";
             this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // btnSatinKira
             // 
@@ -102,12 +106,13 @@ namespace Realtor_Automation
             this.btnSatinKira.TabIndex = 7;
             this.btnSatinKira.Text = "SATIŞ / KİRALAMA";
             this.btnSatinKira.UseVisualStyleBackColor = true;
+            this.btnSatinKira.Click += new System.EventHandler(this.btnSatinKira_Click);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(839, 470);
             this.Controls.Add(this.btnSatinKira);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnIstatistik);

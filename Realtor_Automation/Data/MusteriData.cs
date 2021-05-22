@@ -1,4 +1,5 @@
-﻿using Realtor_Automation.Models;
+﻿using Realtor_Automation.DTO;
+using Realtor_Automation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,27 @@ namespace Realtor_Automation.Data
             return musteriler;
         }
 
+        public List<MusteriSpDTO> GetAllCustomersFromSp()
+        {
+            var musteriSpDTO = db.Database.SqlQuery<MusteriSpDTO>("exec lsp_get_all_musteri").ToList();
+            return musteriSpDTO;
+        }
+
+        public void DeleteCustomer(string ad , string soyad)
+        {
+            var deletingCustomer = db.TBLMusteri.FirstOrDefault(q => q.Ad == ad && q.Soyad == soyad );
+            db.TBLMusteri.Remove(deletingCustomer);
+            db.SaveChanges();
+        }
+
+        internal void UpdateCustomer(Musteri musteri,Musteri degiscekMusteri)
+        {
+            var a =  db.TBLMusteri.FirstOrDefault(q => q.Ad == degiscekMusteri.Ad && q.Soyad == degiscekMusteri.Soyad && q.TelNo == degiscekMusteri.TelNo);
+            a.Ad = musteri.Ad;
+            a.Soyad = musteri.Soyad;
+            a.TelNo = musteri.TelNo;
+            a.MusteriTurId = musteri.MusteriTurId;
+            db.SaveChanges();
+        }
     }
 }

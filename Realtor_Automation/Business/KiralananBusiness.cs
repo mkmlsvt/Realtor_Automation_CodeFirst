@@ -31,5 +31,29 @@ namespace Realtor_Automation.Business
             var kiralananlarDTO = mapper.Map<List<Kiralanan>, List<KiralananDTO>>(kiralananlar);
             return kiralananlarDTO;
         }
+
+        public int ToplamKiralananSayi()
+        {
+            int toplam = 0;
+            var kiralananlar = kiralananData.GetAllKiralanan();
+            foreach(var kiralanan in kiralananlar)
+            {
+                toplam++;
+            }
+            return toplam;
+        }
+        public double KiralananOrtalama()
+        {
+            double ortKira = 0;
+            var kiralananlar = kiralananData.GetAllKiralanan();
+            var kiralananlarDTO = mapper.Map<List<Kiralanan>, List<KiralananDTO>>(kiralananlar);
+            foreach(var kiralananDto in kiralananlarDTO)
+            {
+                ortKira += int.Parse(kiralananDto.EvFiyat.ToString());
+            }
+            ortKira = ortKira / ToplamKiralananSayi();
+            return ortKira;
+        }
+
     }
 }

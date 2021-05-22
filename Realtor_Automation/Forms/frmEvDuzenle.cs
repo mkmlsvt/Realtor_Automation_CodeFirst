@@ -1,10 +1,12 @@
 ﻿using Realtor_Automation.Business;
+using Realtor_Automation.Loglar.EvLog;
 using Realtor_Automation.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -217,7 +219,7 @@ namespace Realtor_Automation.Forms
             else
             {
                 UpdateHouse();
-                MessageBox.Show("Başarıyla Kaydedildi-- anasayfaya yonlendirilceksiniz", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Başarıyla Kaydedildi-- anasayfaya yonlendirilceksiniz", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //HomePage form = new HomePage();
                 this.Close();
                 //form.Show();
@@ -229,19 +231,34 @@ namespace Realtor_Automation.Forms
         }
         private void UpdateHouse()
         {
-            evBusiness = new EvBusiness();
-            Ev ev = new Ev();
-            ev.Adres = richtxtAdres.Text;
-            ev.Esyali = checkBox1.Checked;
-            ev.EvTurId =int.Parse(cmboxEvTur.SelectedValue.ToString());
-            ev.Fiyat = int.Parse(txtEvFiyat.Text);
-            ev.Kat = int.Parse(masktxtEvKat.Text);
-            ev.KiralikSatilik = cmboxIslemTur.SelectedItem.ToString();
-            ev.Metrekare= int.Parse(masktxtMetreKare.Text);
-            ev.MusteriId = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
-            ev.OdaSayi = int.Parse(masktxtOdaSayi.Text);
-            ev.Resim = resimYolu;
-            evBusiness.UpdateHouse(duzenlenecekId, ev);
+            try
+            {
+                evBusiness = new EvBusiness();
+                Ev ev = new Ev();
+                ev.Adres = richtxtAdres.Text;
+                ev.Esyali = checkBox1.Checked;
+                ev.EvTurId = int.Parse(cmboxEvTur.SelectedValue.ToString());
+                ev.Fiyat = int.Parse(txtEvFiyat.Text);
+                ev.Kat = int.Parse(masktxtEvKat.Text);
+                ev.KiralikSatilik = cmboxIslemTur.SelectedItem.ToString();
+                ev.Metrekare = int.Parse(masktxtMetreKare.Text);
+                ev.MusteriId = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+                ev.OdaSayi = int.Parse(masktxtOdaSayi.Text);
+                ev.Resim = resimYolu;
+                evBusiness.UpdateHouse(duzenlenecekId, ev);
+                MessageBox.Show("Başarıyla Kaydedildi-- anasayfaya yonlendirilceksiniz", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Girdiğinz değelerde hata ile karşılaşışdı Tekrar deneyin...", "hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var evlog = new EvLog();
+                using (StreamWriter writer = new StreamWriter(evlog.fullpath, true))
+                {
+                    writer.WriteLine(exception.Message + "\tEv Duzenleme Başarısız\t" + System.DateTime.Now.ToString());
+                }
+            }
+            
         }
        
     }

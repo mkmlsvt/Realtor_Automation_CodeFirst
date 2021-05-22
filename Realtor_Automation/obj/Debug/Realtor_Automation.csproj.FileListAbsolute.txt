@@ -22,3 +22,7 @@ C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\bin\Debug\Auto
 C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmEvDuzenle.resources
 C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmIslem.resources
 C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmRapor.resources
+C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.sourcelink.json
+C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmIstatistik.resources
+C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmMusteri.resources
+C:\Users\mehme\source\repos\Realtor_Automation\Realtor_Automation\obj\Debug\Realtor_Automation.Forms.frmGiris.resources
