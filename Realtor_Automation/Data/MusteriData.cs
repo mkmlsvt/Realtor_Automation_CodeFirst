@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Realtor_Automation.Data
 {
@@ -34,9 +35,20 @@ namespace Realtor_Automation.Data
 
         public void DeleteCustomer(string ad , string soyad)
         {
-            var deletingCustomer = db.TBLMusteri.FirstOrDefault(q => q.Ad == ad && q.Soyad == soyad );
-            db.TBLMusteri.Remove(deletingCustomer);
-            db.SaveChanges();
+            try
+            {
+                var deletingCustomer = db.TBLMusteri.FirstOrDefault(q => q.Ad == ad && q.Soyad == soyad);
+                db.TBLMusteri.Remove(deletingCustomer);
+                db.SaveChanges();
+                MessageBox.Show("Silme İşlemi Başarılı", "Silindi", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+            catch (Exception e )
+            {
+                MessageBox.Show("Silme İşlemi Başarısız Lütfen Önce Musterinin Evini Silin", "hata", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
+            
         }
 
         internal void UpdateCustomer(Musteri musteri,Musteri degiscekMusteri)

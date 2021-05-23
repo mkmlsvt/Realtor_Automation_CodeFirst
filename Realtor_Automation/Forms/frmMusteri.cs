@@ -61,7 +61,7 @@ namespace Realtor_Automation.Forms
         {
             DeleteCustomer();
             UpdateDataGridview();
-            IslemBasariliMesaj();
+            //IslemBasariliMesaj();
         }
         private void IslemBasariliMesaj()
         {

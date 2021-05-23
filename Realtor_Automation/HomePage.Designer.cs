@@ -135,6 +135,7 @@ namespace Realtor_Automation
             this.Controls.Add(this.btnMusteriListele);
             this.Controls.Add(this.btnEvListele);
             this.Controls.Add(this.btnEvEkle);
+            this.MinimumSize = new System.Drawing.Size(955, 569);
             this.Name = "HomePage";
             this.Text = "ANA SAYFA";
             this.ResumeLayout(false);
