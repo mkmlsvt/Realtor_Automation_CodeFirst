@@ -78,12 +78,13 @@ namespace Realtor_Automation.Forms
             // 
             // btnResimSec
             // 
-            this.btnResimSec.Location = new System.Drawing.Point(30, 230);
+            this.btnResimSec.BackColor = System.Drawing.Color.Pink;
+            this.btnResimSec.Location = new System.Drawing.Point(30, 223);
             this.btnResimSec.Name = "btnResimSec";
             this.btnResimSec.Size = new System.Drawing.Size(256, 53);
             this.btnResimSec.TabIndex = 1;
             this.btnResimSec.Text = "RESİM SEÇ";
-            this.btnResimSec.UseVisualStyleBackColor = true;
+            this.btnResimSec.UseVisualStyleBackColor = false;
             this.btnResimSec.Click += new System.EventHandler(this.btnResimSec_Click);
             // 
             // label1
@@ -231,12 +232,13 @@ namespace Realtor_Automation.Forms
             // 
             // btnKaydet
             // 
+            this.btnKaydet.BackColor = System.Drawing.Color.Lime;
             this.btnKaydet.Location = new System.Drawing.Point(38, 264);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(180, 52);
             this.btnKaydet.TabIndex = 8;
             this.btnKaydet.Text = "MÜŞTERİ EKLE";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // cmboxMTur
@@ -307,12 +309,13 @@ namespace Realtor_Automation.Forms
             // 
             // btnEvDuzenle
             // 
+            this.btnEvDuzenle.BackColor = System.Drawing.Color.Lime;
             this.btnEvDuzenle.Location = new System.Drawing.Point(675, 410);
             this.btnEvDuzenle.Name = "btnEvDuzenle";
             this.btnEvDuzenle.Size = new System.Drawing.Size(227, 81);
             this.btnEvDuzenle.TabIndex = 17;
             this.btnEvDuzenle.Text = "EVİ DÜZENLE";
-            this.btnEvDuzenle.UseVisualStyleBackColor = true;
+            this.btnEvDuzenle.UseVisualStyleBackColor = false;
             this.btnEvDuzenle.Click += new System.EventHandler(this.btnEvDuzenle_Click);
             // 
             // dataGridView1
@@ -339,6 +342,7 @@ namespace Realtor_Automation.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(1356, 603);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dataGridView1);

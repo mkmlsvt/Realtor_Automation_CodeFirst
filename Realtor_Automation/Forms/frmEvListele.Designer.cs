@@ -269,22 +269,24 @@ namespace Realtor_Automation.Forms
             // 
             // btnEvSil
             // 
+            this.btnEvSil.BackColor = System.Drawing.Color.Crimson;
             this.btnEvSil.Location = new System.Drawing.Point(382, 442);
             this.btnEvSil.Name = "btnEvSil";
             this.btnEvSil.Size = new System.Drawing.Size(185, 55);
             this.btnEvSil.TabIndex = 2;
             this.btnEvSil.Text = "SİL";
-            this.btnEvSil.UseVisualStyleBackColor = true;
+            this.btnEvSil.UseVisualStyleBackColor = false;
             this.btnEvSil.Click += new System.EventHandler(this.btnEvSil_Click);
             // 
             // btnEvGorDuz
             // 
+            this.btnEvGorDuz.BackColor = System.Drawing.Color.Lime;
             this.btnEvGorDuz.Location = new System.Drawing.Point(783, 442);
             this.btnEvGorDuz.Name = "btnEvGorDuz";
             this.btnEvGorDuz.Size = new System.Drawing.Size(189, 55);
             this.btnEvGorDuz.TabIndex = 3;
             this.btnEvGorDuz.Text = "GÖRÜNTÜLE/DÜZENLE";
-            this.btnEvGorDuz.UseVisualStyleBackColor = true;
+            this.btnEvGorDuz.UseVisualStyleBackColor = false;
             this.btnEvGorDuz.Click += new System.EventHandler(this.btnEvGorDuz_Click);
             // 
             // dataGridView1
@@ -301,13 +303,14 @@ namespace Realtor_Automation.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(1086, 580);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEvGorDuz);
             this.Controls.Add(this.btnEvSil);
             this.Controls.Add(this.panelFiltre);
             this.Name = "frmEvListele";
-            this.Text = "frmEvListele";
+            this.Text = "EV LİSTESİ/DÜZENLEME";
             this.Load += new System.EventHandler(this.frmEvListele_Load);
             this.panelFiltre.ResumeLayout(false);
             this.panelFiltre.PerformLayout();

@@ -59,35 +59,38 @@ namespace Realtor_Automation.Forms
             // 
             // btnSat
             // 
+            this.btnSat.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnSat.Location = new System.Drawing.Point(581, 348);
             this.btnSat.Name = "btnSat";
             this.btnSat.Size = new System.Drawing.Size(205, 72);
             this.btnSat.TabIndex = 2;
             this.btnSat.Text = "SAT";
-            this.btnSat.UseVisualStyleBackColor = true;
+            this.btnSat.UseVisualStyleBackColor = false;
             this.btnSat.Click += new System.EventHandler(this.btnSat_Click);
             // 
             // btnKirala
             // 
+            this.btnKirala.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnKirala.Location = new System.Drawing.Point(581, 448);
             this.btnKirala.Name = "btnKirala";
             this.btnKirala.Size = new System.Drawing.Size(205, 72);
             this.btnKirala.TabIndex = 3;
             this.btnKirala.Text = "KİRALA";
-            this.btnKirala.UseVisualStyleBackColor = true;
+            this.btnKirala.UseVisualStyleBackColor = false;
             this.btnKirala.Click += new System.EventHandler(this.btnKirala_Click);
             // 
             // frmIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1367, 554);
             this.Controls.Add(this.btnKirala);
             this.Controls.Add(this.btnSat);
             this.Controls.Add(this.dataGridMusteriler);
             this.Controls.Add(this.dataGridEvler);
             this.Name = "frmIslem";
-            this.Text = "frmIslem";
+            this.Text = "İŞLEM SAYFASI";
             this.Load += new System.EventHandler(this.frmIslem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEvler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMusteriler)).EndInit();

@@ -56,22 +56,25 @@ namespace Realtor_Automation.Forms
             // 
             // btnDuzenle
             // 
-            this.btnDuzenle.Location = new System.Drawing.Point(440, 405);
+            this.btnDuzenle.BackColor = System.Drawing.Color.Lime;
+            this.btnDuzenle.Location = new System.Drawing.Point(472, 405);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(95, 23);
+            this.btnDuzenle.Size = new System.Drawing.Size(117, 45);
             this.btnDuzenle.TabIndex = 2;
             this.btnDuzenle.Text = "DÜZENLE";
-            this.btnDuzenle.UseVisualStyleBackColor = true;
+            this.btnDuzenle.UseVisualStyleBackColor = false;
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(591, 405);
+            this.btnSil.BackColor = System.Drawing.Color.Crimson;
+            this.btnSil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSil.Location = new System.Drawing.Point(668, 405);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.Size = new System.Drawing.Size(116, 45);
             this.btnSil.TabIndex = 3;
             this.btnSil.Text = "SİL";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // label1
@@ -137,13 +140,14 @@ namespace Realtor_Automation.Forms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(162, 152);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 11;
             // 
             // frmMusteri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(1024, 490);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.masktxtTel);
@@ -157,7 +161,7 @@ namespace Realtor_Automation.Forms
             this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmMusteri";
-            this.Text = "frmMusteri";
+            this.Text = "MÜŞTERİ DÜZENLE/SİL";
             this.Load += new System.EventHandler(this.frmMusteri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

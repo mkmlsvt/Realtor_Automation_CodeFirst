@@ -167,6 +167,7 @@ namespace Realtor_Automation.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1044, 528);
             this.Controls.Add(this.lblSatilanEvFiyatOrtalama);
             this.Controls.Add(this.lblKiralananEvFiyatOrtalama);
@@ -180,8 +181,9 @@ namespace Realtor_Automation.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Name = "frmIstatistik";
-            this.Text = "frmIstatistik";
+            this.Text = "İSTATİSTİK";
             this.Load += new System.EventHandler(this.frmIstatistik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -84,12 +84,13 @@ namespace Realtor_Automation.Forms
             // 
             // btnResimSec
             // 
+            this.btnResimSec.BackColor = System.Drawing.Color.Pink;
             this.btnResimSec.Location = new System.Drawing.Point(12, 194);
             this.btnResimSec.Name = "btnResimSec";
             this.btnResimSec.Size = new System.Drawing.Size(227, 47);
             this.btnResimSec.TabIndex = 1;
             this.btnResimSec.Text = "RESİM SEÇ";
-            this.btnResimSec.UseVisualStyleBackColor = true;
+            this.btnResimSec.UseVisualStyleBackColor = false;
             this.btnResimSec.Click += new System.EventHandler(this.btnResimSec_Click);
             // 
             // openFileDialog1
@@ -251,12 +252,13 @@ namespace Realtor_Automation.Forms
             // 
             // btnKaydet
             // 
+            this.btnKaydet.BackColor = System.Drawing.Color.Lime;
             this.btnKaydet.Location = new System.Drawing.Point(84, 295);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(163, 41);
             this.btnKaydet.TabIndex = 22;
             this.btnKaydet.Text = "KAYDET";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // cmboxMTur
@@ -391,18 +393,20 @@ namespace Realtor_Automation.Forms
             // 
             // btnEvEkle
             // 
+            this.btnEvEkle.BackColor = System.Drawing.Color.Lime;
             this.btnEvEkle.Location = new System.Drawing.Point(691, 452);
             this.btnEvEkle.Name = "btnEvEkle";
             this.btnEvEkle.Size = new System.Drawing.Size(163, 41);
             this.btnEvEkle.TabIndex = 23;
             this.btnEvEkle.Text = "EVİ KAYDET";
-            this.btnEvEkle.UseVisualStyleBackColor = true;
+            this.btnEvEkle.UseVisualStyleBackColor = false;
             this.btnEvEkle.Click += new System.EventHandler(this.btnEvEkle_Click);
             // 
             // FrmEvEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(1371, 547);
             this.Controls.Add(this.btnEvEkle);
             this.Controls.Add(this.dataGridView1);

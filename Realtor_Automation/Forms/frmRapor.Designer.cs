@@ -79,13 +79,14 @@ namespace Realtor_Automation.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1363, 542);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridKiralanan);
             this.Controls.Add(this.dataGridSatilan);
             this.Name = "frmRapor";
-            this.Text = "frmRapor";
+            this.Text = "RAPOR";
             this.Load += new System.EventHandler(this.frmRapor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSatilan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridKiralanan)).EndInit();
